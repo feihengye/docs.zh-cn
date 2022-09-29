@@ -7,7 +7,7 @@
 ## 语法
 
 ```Haskell
-months_diff(expr1,expr2);
+INT months_diff(expr1,expr2);
 ```
 
 ## 参数说明

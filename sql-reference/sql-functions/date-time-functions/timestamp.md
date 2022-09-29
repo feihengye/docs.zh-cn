@@ -7,7 +7,7 @@
 ## 语法
 
 ```Haskell
-timestamp(expr);
+DATETIME timestamp(expr);
 ```
 
 ## 参数说明

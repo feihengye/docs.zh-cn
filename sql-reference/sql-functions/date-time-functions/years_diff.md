@@ -7,7 +7,7 @@
 ## 语法
 
 ```Haskell
-years_diff(expr1,expr2);
+INT years_diff(expr1,expr2);
 ```
 
 ## 参数说明

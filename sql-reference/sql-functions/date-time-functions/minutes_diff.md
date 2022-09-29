@@ -7,7 +7,7 @@
 ## 语法
 
 ```Haskell
-minutes_diff(expr1,expr2);
+INT minutes_diff(expr1,expr2);
 ```
 
 ## 参数说明
