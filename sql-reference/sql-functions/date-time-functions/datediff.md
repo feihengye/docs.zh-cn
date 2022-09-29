@@ -10,7 +10,7 @@
 
 ## 语法
 
-`DATETIME DATEDIFF(DATETIME expr1,DATETIME expr2)`
+`INT DATEDIFF(DATETIME expr1,DATETIME expr2)`
 
 ## 示例
 
