@@ -209,6 +209,7 @@ public class SumInt {
 | serializeLength()     | 中间结果序列化后的长度，单位为 Byte。 serializeLength 的数据类型固定为 INT。 例如，示例中 `State { int counter = 0; public int serializeLength() { return 4; }}` 包含对中间结果序列化后的说明，即，中间结果的数据类型为 INT，序列化长度为 4 Byte。您也可以按照业务需求进行调整，例如中间结果序列化后的数据类型 LONG，序列化长度为 8 Byte，则需要传入 `State { long counter = 0; public int serializeLength() { return 8; }}`。 |
 
 > 注意
+>
 > `java.nio.ByteBuffer` 序列化相关事项：
 >
 > - 不支持依赖 ByteBuffer 的 `remaining` 方法来反序列化 State。
@@ -222,6 +223,8 @@ UDWF，即用户自定义窗口函数。跟普通聚合函数不同的是，窗�
 以下示例以 `MY_WINDOW_SUM_INT` 函数为例进行说明。与内置函数 `SUM`（返回类型为 BIGINT）区别在于，`MY_WINDOW_SUM_INT` 函数支持传入参数和返回参数的类型为 INT。
 
 ```Java
+package com.starrocks.udf.sample;
+
 public class WindowSumInt {    
     public static class State {
         int counter = 0;
@@ -310,6 +313,8 @@ UDTF，即用户自定义表值函数，读入一行数据，输出多个值可�
 以下示例以 `MY_UDF_SPLIT` 函数为例进行说明。`MY_UDF_SPLIT` 函数支持分隔符为空格，传入参数和返回参数的类型为 STRING。
 
 ```java
+package com.starrocks.udf.sample;
+
 public class UDFSplit{
     public String[] process(String in) {
         if (in == null) return null;

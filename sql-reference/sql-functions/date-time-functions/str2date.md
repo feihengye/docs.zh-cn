@@ -9,7 +9,7 @@
 ## 语法
 
 ```Haskell
-VARCHAR str2date(str, format);
+DATE str2date(VARCHAR str, VARCHAR format);
 ```
 
 ## 参数说明
@@ -25,7 +25,7 @@ VARCHAR str2date(str, format);
 ## 示例
 
 ```Plain Text
-mysql> select str2date('2010-11-30 23:59:59', '%Y-%m-%d %H:%i:%s');
+select str2date('2010-11-30 23:59:59', '%Y-%m-%d %H:%i:%s');
 +------------------------------------------------------+
 | str2date('2010-11-30 23:59:59', '%Y-%m-%d %H:%i:%s') |
 +------------------------------------------------------+

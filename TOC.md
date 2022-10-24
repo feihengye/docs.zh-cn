@@ -23,6 +23,7 @@
   + [从 Apache Kafka® 持续导入](/loading/RoutineLoad.md)
   + [使用 Apache Spark™ 批量导入](/loading/SparkLoad.md)
   + [使用 INSERT 语句导入](/loading/InsertInto.md)
+  + [使用 Stream Load 事务接口导入](/loading/stream_load_transaction_interface.md)
   + [从 MySQL 实时同步](/loading/Flink_cdc_load.md)
   + [从 Apache Flink® 导入](/loading/Flink-connector-starrocks.md)
   + [通过导入实现数据变更](/loading/PrimaryKeyLoad.md)
@@ -92,6 +93,7 @@
     + [性能优化](/administration/Profiling.md)
 + 参考手册
   + SQL参考
+    + [关键字](/sql-reference/sql-statements/keywords.md)
     + 用户账户管理
       + [ALTER USER](/sql-reference/sql-statements/account-management/ALTER%20USER.md)
       + [CREATE ROLE](/sql-reference/sql-statements/account-management/CREATE%20ROLE.md)
@@ -127,6 +129,7 @@
       + [SHOW FULL COLUMNS](/sql-reference/sql-statements/Administration/SHOW%20FULL%20COLUMNS.md)
       + [SHOW INDEX](/sql-reference/sql-statements/Administration/SHOW%20INDEX.md)
       + [SHOW PLUGINS](/sql-reference/sql-statements/Administration/SHOW%20PLUGINS.md)
+      + [SHOW PROCESSLIST](/sql-reference/sql-statements/Administration/SHOW%20PROCESSLIST.md)
       + [SHOW TABLE STATUS](/sql-reference/sql-statements/Administration/SHOW%20TABLE%20STATUS.md)
       + [SHOW FILE](/sql-reference/sql-statements/Administration/SHOW%20FILE.md)
       + [UNINSTALL PLUGIN](/sql-reference/sql-statements/Administration/UNINSTALL%20PLUGIN.md)
@@ -178,6 +181,7 @@
       + [ALTER ROUTINE LOAD](/sql-reference/sql-statements/data-manipulation/alter-routine-load.md)
       + [BROKER LOAD](/sql-reference/sql-statements/data-manipulation/BROKER%20LOAD.md)
       + [CANCEL LOAD](/sql-reference/sql-statements/data-manipulation/CANCEL%20LOAD.md)
+      + [CANCEL REFRESH MATERIALIZED VIEW](/sql-reference/sql-statements/data-manipulation/CANCEL%20REFRESH%20MATERIALIZED%20VIEW.md)
       + [CANCEL EXPORT](/sql-reference/sql-statements/data-manipulation/CANCEL%20EXPORT.md)
       + [DELETE](/sql-reference/sql-statements/data-manipulation/DELETE.md)
       + [EXPORT](/sql-reference/sql-statements/data-manipulation/EXPORT.md)
@@ -500,6 +504,7 @@
       + [Routine Load](/faq/loading/Routine_load_faq.md)
       + [Broker Load](/faq/loading/Broker_load_faq.md)
       + [Insert Into](/faq/loading/Insert_into_faq.md)
+      + [MySQL 实时同步至 StarRocks 常见问题](/faq/loading/synchronize_mysql_into_sr.md)
       + [Flink connector](/faq/loading/Flink_connector_faq.md)
       + [DataX](/faq/loading/DataX_faq.md)
       + [CloudCanal 数据导入](/faq/loading/CloudCanal_load_faq.md)

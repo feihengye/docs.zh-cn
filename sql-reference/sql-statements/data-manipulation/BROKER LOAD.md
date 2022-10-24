@@ -32,7 +32,7 @@ WITH BROKER "<broker_name>"
 
 用于描述一批次待导入的数据。每个 `data_desc` 声明了本批次待导入数据所属的数据源地址、ETL 函数、StarRocks 表和分区等信息。
 
-Broker Load 支持一次导入多个数据文件。在一个导入作业中，您可以使用多个 `data_desc` 来声明导入多个数据文件，也可以使用一个 `data_desc` 来声明导入一个路径下的所有数据文件。Broker Load 能够保证单次导入的多个数据文件数据原子性成功或失败。
+Broker Load 支持一次导入多个数据文件。在一个导入作业中，您可以使用多个 `data_desc` 来声明导入多个数据文件，也可以使用一个 `data_desc` 来声明导入一个路径下的所有数据文件。Broker Load 支持一次导入多个数据文件，并且能够保证单次导入事务的原子性，即单次导入的多个数据文件都成功或者都失败，而不会出现部分导入成功、部分导入失败的情况。
 
 `data_desc` 语法如下：
 
@@ -308,7 +308,7 @@ PROPERTIES ("<key1>" = "<value1>"[, "<key2>" = "<value2>" ...])
 
 - `timezone`
 
-  指定导入作业所使用的时区。默认为 `Asia/Shanghai` 时区。该参数会影响所有导入涉及的、跟时区设置有关的函数所返回的结果。受时区影响的函数有 strftime、alignment_timestamp 和 from_unixtime 等，具体请参见[设置时区](/using_starrocks/timezone.md)。
+  指定导入作业所使用的时区。默认为 `Asia/Shanghai` 时区。该参数会影响所有导入涉及的、跟时区设置有关的函数所返回的结果。受时区影响的函数有 strftime、alignment_timestamp 和 from_unixtime 等，具体请参见[设置时区](/using_starrocks/timezone.md)。导入参数 `timezone` 设置的时区对应“[设置时区](/using_starrocks/timezone.md)”中所述的会话级时区。
 
 ## 示例
 

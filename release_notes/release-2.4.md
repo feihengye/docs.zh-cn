@@ -1,12 +1,12 @@
 # StarRocks version 2.4
 
-## 2.4.0 RC
+## 2.4.0
 
-发布日期： 2022 年 9 月 17 日
+发布日期： 2022 年 10 月 20 日
 
 ### 新增特性
 
-- 支持构建多表物化视图，实现多表 JOIN 查询加速。相关文档，请参见 [物化视图](../using_starrocks/Materialized_view.md)。
+- 支持构建异步多表物化视图，实现多表 JOIN 查询加速。异步物化视图支持所有[数据模型](../table_design/Data_model.md)。相关文档，请参见 [物化视图](../using_starrocks/Materialized_view.md)。
 
 - 支持通过 INSERT OVERWRITE 语句批量写入并覆盖数据。相关文档，请参见 [INSERT 导入](../loading/InsertInto.md)。
 
@@ -50,8 +50,12 @@
 
 - 调整了计算默认 PageCache Size 和一致性校验内存的方法，避免多实例部署时的 OOM 问题。
 
+- 去除数据导入主键模型时的 final_merge 操作，主键模型大数据量单批次导入性能提升至两倍。
+
+- 支持 Stream Load 事务接口：支持和 Apache Flink®、Apache Kafka® 等其他系统之间实现跨系统的两阶段提交，并提升高并发 Stream Load 导入场景下的性能。
+
 - 函数相关：
-  - count distinct 支持多个字段，可计算多字段组合去重后的结果数目。相关文档，请参见[count](../sql-reference/sql-functions/aggregate-functions/count.md)。
+  - 支持在一条 SELECT 语句中使用多个 COUNT(DISTINCT)。相关文档，请参见[count](../sql-reference/sql-functions/aggregate-functions/count.md)。
   - 窗口函数 min 和 max 支持滑动窗口。相关文档，请参见[窗口函数](../using_starrocks/Window_function.md#使用-MAX()-窗口函数)。
   - 优化函数 window_funnel 性能。相关文档，请参见[window_funnel](../sql-reference/sql-functions/aggregate-functions/window_funnel.md)。
 
@@ -71,8 +75,7 @@
 - 数据湖分析相关问题：
   - 查询 HIVE 外表中 Parquet 格式数据失败。 [#7413](https://github.com/StarRocks/starrocks/pull/7413) [#7482](https://github.com/StarRocks/starrocks/pull/7482) [#7624](https://github.com/StarRocks/starrocks/pull/7624)
   - Elasticsearch 外表 Limit 查询结果不正确。[#9226](https://github.com/StarRocks/starrocks/pull/9226)
-
-- 查询存有复杂数据类型的 Apache Iceberg 表返回未知错误。[#11298](https://github.com/StarRocks/starrocks/pull/11298)
+  - 查询存有复杂数据类型的 Apache Iceberg 表返回未知错误。[#11298](https://github.com/StarRocks/starrocks/pull/11298)
 
 - Leader FE 节点和 Follower FE 节点间元数据不同步。[#11215](https://github.com/StarRocks/starrocks/pull/11215)
 
